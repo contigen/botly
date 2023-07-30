@@ -1,5 +1,7 @@
-'use client'
+import { ArrowLeft2, ArrowRight2, Home } from 'iconsax-react'
 
-import { VolumeUp } from 'react-iconly'
+const HomeIcon = <Home size='32' color='#d9e3f0' />
+const ArrowLeftIcon = <ArrowLeft2 size='32' color='#d9e3f0' />
+const ArrowRightIcon = <ArrowRight2 size='32' color='#d9e3f0' />
 
-export const Volume = () => <VolumeUp set='two-tone' primaryColor='#666666' />
+export { HomeIcon, ArrowLeftIcon, ArrowRightIcon }
