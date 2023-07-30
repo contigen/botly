@@ -17,6 +17,7 @@ const flexVariants = tv({
         alignItems: {
             center: 'items-center',
             end: 'items-end',
+            baseline: 'items-baseline',
         },
     },
 })
@@ -36,7 +37,7 @@ export default function FlexBox({
         | 'end'
         | 'evenly'
         | undefined
-    alignItems?: 'center' | 'end' | undefined
+    alignItems?: 'center' | 'end' | 'baseline' | undefined
     className?: string
 }) {
     return (
