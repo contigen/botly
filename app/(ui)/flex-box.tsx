@@ -1,7 +1,7 @@
 import { tv } from 'tailwind-variants'
 import { ComponentProps as FlexBoxProps } from './types/component.type'
 
-const flexStyles = tv({
+const flexVariants = tv({
     base: 'flex',
     variants: {
         direction: {
@@ -19,12 +19,36 @@ const flexStyles = tv({
             end: 'items-end',
         },
     },
-    defaultVariants: {},
 })
 
 export default function FlexBox({
     children,
+    direction,
+    justifyContent,
+    alignItems,
     className,
-}: FlexBoxProps & { className?: {} }) {
-    return <div className={flexStyles(className)}>{children}</div>
+}: FlexBoxProps & {
+    direction?: 'column' | undefined
+    justifyContent?:
+        | 'center'
+        | 'around'
+        | 'between'
+        | 'end'
+        | 'evenly'
+        | undefined
+    alignItems?: 'center' | 'end' | undefined
+    className?: string
+}) {
+    return (
+        <div
+            className={flexVariants({
+                direction,
+                justifyContent,
+                alignItems,
+                className,
+            })}
+        >
+            {children}
+        </div>
+    )
 }
