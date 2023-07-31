@@ -1,3 +1,4 @@
+import { Button } from '@nextui-org/button'
 import FlexBox from './flex-box'
 import { icons } from './icons'
 import { Avatar } from '@nextui-org/avatar'
@@ -26,8 +27,9 @@ export function Header() {
 
 const IconsList = () => (
     <FlexBox className='basis-1/4' justifyContent='evenly'>
-        {NotificationIcon}
-        {SearchIcon} {AddIcon}
+        <Button isIconOnly>{NotificationIcon}</Button>
+        <Button isIconOnly>{SearchIcon}</Button>
+        <Button isIconOnly>{AddIcon}</Button>
         <Avatar size='sm' isBordered isFocusable />
     </FlexBox>
 )
