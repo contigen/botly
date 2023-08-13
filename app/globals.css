@@ -2,28 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+@layer base {
+  * {
     @apply tracking-tighter;
-}
-h1 {
+  }
+  h1 {
     @apply font-bold;
     font-size: clamp(2.5rem, 1.6vw + 2.1rem, 3.5rem);
     line-height: clamp(3.25rem, 3.2vw + 2.45rem, 5.25rem);
-}
-h2,
-h3,
-h4 {
+  }
+  h2,
+  h3,
+  h4 {
     @apply font-semibold;
-}
-h2 {
+  }
+  h2 {
     font-size: clamp(2rem, 1.6vw + 1.6rem, 3rem);
     line-height: clamp(2.25rem, 3.12vw + 1.47rem, 4.2rem);
-}
-h3 {
+  }
+  h3 {
     font-size: clamp(1.5rem, 1.6vw + 1.1rem, 2.5rem);
     line-height: clamp(1.65rem, 2.56vw + 1.01rem, 3.25rem);
-}
-body {
+  }
+  body {
     @apply font-medium m-4;
     font-size: clamp(1.125rem, 0.6vw + 0.975rem, 1.5rem);
+  }
 }
