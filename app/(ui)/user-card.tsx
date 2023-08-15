@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardBody, CardFooter } from '@nextui-org/card'
+import { Card, CardBody, CardFooter } from '@nextui-org/card'
 import { Button } from '@nextui-org/button'
 import { ArrowRight2 } from 'iconsax-react'
 import { Spacer } from '@nextui-org/spacer'
@@ -27,30 +27,31 @@ const USERS_METRICS = [
 
 export function UserCard() {
   return (
-    <Card isFooterBlurred className='relative bg-slate-500'>
-      <FlexBox>
-        <CardHeader>
-          <h1>Unlock Pro Insights</h1>
-        </CardHeader>
-        <Spacer y={4} />
+    <Card isFooterBlurred className='relative'>
+      <FlexBox className='w-full' justifyContent='evenly'>
+        <CardBody className='static'>
+          <h1>
+            Unlock Pro <br />
+            Insights
+          </h1>
+          <Spacer y={4} />
+          <FlexBox justifyContent='between'>
+            <Button endContent={ArrowRightIcon} radius='sm' size='sm'>
+              View earning
+            </Button>
+          </FlexBox>
+        </CardBody>
+        <div>
+          <Image
+            src={charSrc}
+            alt='An illustration of a 3D character standing in motion, as if running, holding a laptop, wearing stylish glasses, a backpack, and a backwards cap, projecting a tech-savvy and adventurous persona'
+            height={300}
+            placeholder='blur'
+            priority
+            className=''
+          />
+        </div>
       </FlexBox>
-      <CardBody className='static'>
-        <FlexBox justifyContent='between'>
-          <Button endContent={ArrowRightIcon} radius='sm' size='sm'>
-            View earning
-          </Button>
-          <div className=''>
-            <Image
-              src={charSrc}
-              alt='An illustration of a 3D character standing in motion, as if running, holding a laptop, wearing stylish glasses, a backpack, and a backwards cap, projecting a tech-savvy and adventurous persona'
-              height={300}
-              placeholder='blur'
-              priority
-              className=''
-            />
-          </div>
-        </FlexBox>
-      </CardBody>
       <Spacer y={4} />
       <CardFooter className='bg-zinc-50 rounded-2xl w-auto m-3'>
         {USERS_METRICS.map(({ title, value, percentage }) => (
