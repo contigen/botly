@@ -7,11 +7,13 @@ import { Category2, Game, Home } from 'iconsax-react'
 import Image from 'next/image'
 import logo from '@/public/supaui.webp'
 
+/* eslint-disable react/jsx-key*/
 const ICONS = [
   <Home color='#d9e3f0' />,
   <Game size='32' color='#d9e3f0' />,
   <Category2 size='32' color='#d9e3f0' />,
 ]
+/* eslint-enable react/jsx-key*/
 
 export function Navbar() {
   return (
