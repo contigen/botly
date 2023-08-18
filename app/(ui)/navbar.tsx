@@ -1,35 +1,58 @@
-import { Divider } from '@nextui-org/divider'
-import { Button } from '@nextui-org/button'
-import { Spacer } from '@nextui-org/spacer'
-import FlexBox from './flex-box'
-import { icons } from './icons'
-import { Category2, Game, Home } from 'iconsax-react'
-import Image from 'next/image'
-import logo from '@/public/supaui.webp'
+import { Divider } from "@nextui-org/divider"
+import { Spacer } from "@nextui-org/spacer"
+import FlexBox from "./flex-box"
+import { icons } from "./icons"
+import {
+  Box1,
+  Calendar,
+  Category2,
+  Game,
+  Home,
+  SidebarLeft,
+  Wallet3,
+} from "iconsax-react"
+import Image from "next/image"
+import logo from "@/public/supaui.webp"
+import { IconButton } from "./icon-button"
 
+const ICONS_COLOR = { color: `#AFAFAF` }
+const dividerBg = `bg-[${ICONS_COLOR.color}]`
 /* eslint-disable react/jsx-key*/
 const ICONS = [
-  <Home color='#d9e3f0' />,
-  <Game size='32' color='#d9e3f0' />,
-  <Category2 size='32' color='#d9e3f0' />,
+  <Home {...ICONS_COLOR} />,
+  <Game {...ICONS_COLOR} />,
+  <Calendar {...ICONS_COLOR} />,
+  <Wallet3 {...ICONS_COLOR} />,
+  <Box1 {...ICONS_COLOR} />,
+  <Category2 {...ICONS_COLOR} />,
 ]
 /* eslint-enable react/jsx-key*/
 
 export function Navbar() {
   return (
     <FlexBox
-      className='m-2 border rounded-xl bg-black/95 gap-4'
+      className='gap-5 rounded-2xl bg-[#1D1D1D] py-4'
       direction='column'
       alignItems='center'
     >
-      <Image src={logo} alt='logo for botly' width={80} quality={100} />
-      <Spacer y={2} />
-      {ICONS.map((icon, idx) => (
-        <Button key={idx} isIconOnly className='bg-transparent'>
-          {icon}
-          <Divider orientation='vertical' />
-        </Button>
+      <Image src={logo} alt='logo for botly' width={70} quality={100} />
+      <Spacer y={0} />
+      {ICONS.map((icon, idx, arr) => (
+        <>
+          <IconButton
+            key={idx}
+            className={idx === arr.length - 3 ? `active` : ``}
+          >
+            {icon}
+          </IconButton>
+          {icon === arr.at(-2) && <Divider orientation='horizontal' />}
+        </>
       ))}
+      <FlexBox className='flex-1 pb-4' alignItems='end'>
+        <IconButton>
+          <SidebarLeft {...ICONS_COLOR} />
+        </IconButton>
+      </FlexBox>
     </FlexBox>
   )
 }
