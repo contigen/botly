@@ -7,15 +7,15 @@ import { DataTable } from './(ui)/data-table'
 
 export default function Home() {
   return (
-    <FlexBox className='gap-2'>
+    <FlexBox className='gap-14'>
       <Navbar />
-      <section className='flex-1 pt-2'>
+      <section className='flex-1 pt-5'>
         <Header />
-        <Spacer y={20} />
+        <Spacer y={16} />
         <main>
           <Cards />
         </main>
-        <Spacer y={5} />
+        <Spacer y={2} />
         <DataTable />
       </section>
     </FlexBox>
