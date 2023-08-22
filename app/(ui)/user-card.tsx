@@ -27,7 +27,7 @@ const USERS_METRICS = [
 
 export function UserCard() {
   return (
-    <Card isFooterBlurred className='relative'>
+    <Card isFooterBlurred className='relative border rounded-3xl' shadow='none'>
       <FlexBox className='w-full' justifyContent='evenly'>
         <CardBody className='static'>
           <h1>
