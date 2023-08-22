@@ -1,7 +1,6 @@
 import { Divider } from "@nextui-org/divider"
 import { Spacer } from "@nextui-org/spacer"
 import FlexBox from "./flex-box"
-import { icons } from "./icons"
 import {
   Box1,
   Calendar,
@@ -31,7 +30,7 @@ const ICONS = [
 export function Navbar() {
   return (
     <FlexBox
-      className='gap-5 rounded-2xl bg-[#1D1D1D] py-4'
+      className='gap-5 rounded-2xl bg-[#1D1D1D] py-4 hidden md:flex'
       direction='column'
       alignItems='center'
     >
@@ -45,7 +44,12 @@ export function Navbar() {
           >
             {icon}
           </IconButton>
-          {icon === arr.at(-2) && <Divider orientation='horizontal' />}
+          {icon === arr.at(-2) && (
+            <Divider
+              orientation='horizontal'
+              className='mx-2 bg-[#3B3B3B] w-5 h-[2px]'
+            />
+          )}
         </>
       ))}
       <FlexBox className='flex-1 pb-4' alignItems='end'>
